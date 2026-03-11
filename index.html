@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahamed Portfolio | IT Support Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --sidebar-bg: #ffffff;
+            --main-bg: #e9ecef;
+            --primary: #2c3e50;
+            --secondary: #27ae60;
+            --text: #333;
+            --shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--main-bg); color: var(--text); overflow-x: hidden; }
+
+        /* MAIN LAYOUT */
+        .wrapper { display: flex; min-height: 100vh; }
+
+        /* SIDEBAR NAVIGATION */
+        nav {
+            width: 80px;
+            background: var(--sidebar-bg);
+            border-right: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+            position: fixed;
+            height: 100vh;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            transition: 0.3s;
+        }
+
+        nav a i { font-size: 1.2rem; }
+        nav a:hover, nav a.active { color: var(--secondary); }
+
+        /* PROFILE CARD (The floating card) */
+        .profile-section {
+            width: 350px;
+            background: white;
+            margin: 40px 20px 40px 100px;
+            border-radius: 4px;
+            box-shadow: var(--shadow);
+            position: fixed;
+            height: calc(100vh - 80px);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .profile-bg { height: 40%; background: #f4f4f4; position: relative; }
+        .profile-pic {
+            width: 180px; height: 180px;
+            border-radius: 4px;
+            background: #eee;
+            position: absolute;
+            bottom: -40px; left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid white;
+            object-fit: cover;
+        }
+
+        .profile-info { margin-top: 60px; padding: 20px; }
+        .profile-info h1 { margin: 0; font-size: 1.5rem; color: var(--primary); }
+        .profile-info p { color: var(--secondary); font-weight: 600; margin: 5px 0; }
+
+        .cv-btn {
+            display: block;
+            margin: 20px;
+            padding: 12px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* CONTENT AREA */
+        main {
+            margin-left: 490px;
+            width: 100%;
+            padding: 40px;
+        }
+
+        section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+            box-shadow: var(--shadow);
+        }
+
+        h2 { border-bottom: 2px solid var(--secondary); display: inline-block; padding-bottom: 5px; margin-bottom: 20px; }
+
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skill { background: #f0f0f0; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; }
+
+        /* Responsive Mobile Layout */
+        @media (max-width: 992px) {
+            nav { width: 100%; height: 60px; bottom: 0; top: auto; flex-direction: row; justify-content: space-around; padding: 0; }
+            .profile-section { position: relative; width: 90%; margin: 20px auto; height: auto; }
+            main { margin-left: 0; padding: 20px; padding-bottom: 80px; }
+            nav a { margin-bottom: 0; font-size: 0.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <nav>
+        <a href="#about"><i class="fa-solid fa-user"></i>ABOUT</a>
+        <a href="#skills"><i class="fa-solid fa-gear"></i>SKILLS</a>
+        <a href="#experience"><i class="fa-solid fa-briefcase"></i>WORKS</a>
+        <a href="#education"><i class="fa-solid fa-graduation-cap"></i>EDUCATION</a>
+        <a href="#contact"><i class="fa-solid fa-phone"></i>CONTACTS</a>
+    </nav>
+
+    <div class="profile-section">
+        <div class="profile-bg">
+            <img src="https://lh3.googleusercontent.com/a/ACg8ocLGWf6xs07Ego3-f1mq3O6QzIpVRT6v24uJkSkmcAhRA5-9lkh7=s260-c-no" alt="Ahamed" class="profile-pic">
+        </div>
+        <div class="profile-info">
+            <h1>Ahamed Abdul Nazeer</h1>
+            <p>Senior IT Support Engineer</p>
+            <div style="margin-top: 15px;">
+                <a href="#" style="color:#555; margin: 0 10px;"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" style="color:#555; margin: 0 10px;"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+        <a href="#" class="cv-btn"><i class="fa-solid fa-download"></i> Download CV (PDF)</a>
+    </div>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! It's AHAMED.</p>
+            <p>I'm a Senior IT Support Engineer with <b>7+ years of experience</b> in managing enterprise IT infrastructure. I have worked with various technologies such as Active Directory, pfSense, Zoho Creator, and AppSheet. I am passionate about optimizing workflows and ensuring zero business interruption.</p>
+            <p>Email: ahamedabdulnazeer96@gmail.com</p>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Expertise</h2>
+            <div class="skills-grid">
+                <span class="skill">Active Directory</span>
+                <span class="skill">pfSense Firewall</span>
+                <span class="skill">Zoho Creator</span>
+                <span class="skill">AppSheet</span>
+                <span class="skill">Network Admin</span>
+                <span class="skill">SLA Management</span>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <div style="margin-bottom: 20px;">
+                <h4 style="margin:0; color:var(--secondary);">Noor Fanos Trading Company</h4>
+                <small>2024 - Present | Buraidha, KSA</small>
+                <p>IT Support Engineer managing Domain Controllers and Network security.</p>
+            </div>
+            </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <p><b>BE in Electronics and Communication</b> - MET Engineering College</p>
+            <p><b>Diploma in Computer Science</b> - Noorul Islam Polytechnic</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p><i class="fa-solid fa-envelope"></i> ahamedabdulnazeer96@gmail.com</p>
+            <p><i class="fa-solid fa-phone"></i> +966-552152442</p>
+            <p><i class="fa-solid fa-location-dot"></i> Buraidha, Al-Qassim, KSA</p>
+        </section>
+    </main>
+</div>
+
+</body>
+</html>
