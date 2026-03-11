@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahamed Abdul Nazeer Portfolio</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e67e22;
+            --bg: #f4f7f6;
+            --text: #333;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text); margin: 0; background: var(--bg); }
+        header { background: var(--primary); color: white; padding: 60px 20px; text-align: center; }
+        header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 2px; }
+        header p { font-size: 1.2rem; opacity: 0.9; margin-top: 10px; }
+        
+        .container { max-width: 900px; margin: -40px auto 40px; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        
+        h2 { border-left: 5px solid var(--secondary); padding-left: 15px; color: var(--primary); margin-top: 30px; }
+        
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; background: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 30px; }
+        .contact-item { font-size: 0.9rem; text-decoration: none; color: var(--text); }
+        .contact-item b { color: var(--secondary); }
+
+        .experience-card { margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 20px; }
+        .job-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
+        .job-title { font-weight: bold; color: var(--secondary); font-size: 1.1rem; }
+        .job-date { color: #7f8c8d; font-size: 0.9rem; }
+        .job-loc { font-style: italic; color: #95a5a6; font-size: 0.85rem; }
+
+        .skills-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .skill-tag { background: #eef2f3; color: var(--primary); padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; border: 1px solid #dcdde1; }
+
+        .edu-item { margin-bottom: 15px; }
+        
+        footer { text-align: center; padding: 30px; color: #7f8c8d; font-size: 0.9rem; }
+        
+        @media (max-width: 600px) { .container { margin: 10px; padding: 20px; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>AHAMED ABDUL NAZEER</h1>
+    <p>Senior IT Support Engineer | Infrastructure Specialist</p>
+</header>
+
+<div class="container">
+    <h2>About Me</h2>
+    <p>Results-driven IT Support Engineer with <b>7+ years of experience</b>  in managing enterprise IT infrastructure. Expert in deploying, configuring, and troubleshooting Windows environments to ensure zero business interruption. Proven track record in optimizing workflows through proactive system monitoring and Active Directory management.</p>
+
+    <h2>Technical Expertise</h2>
+    <div class="skills-container">
+        <span class="skill-tag">Active Directory & GPO</span>
+        <span class="skill-tag">Firewall Management</span>
+        <span class="skill-tag">Endpoint Protection</span>
+        <span class="skill-tag">Network Troubleshooting</span>
+        <span class="skill-tag">OS Deployment</span>
+        <span class="skill-tag">SLA Management</span>
+        <span class="skill-tag">Root Cause Analysis (RCA)</span>
+        <span class="skill-tag">Asset Lifecycle Management</span>
+    </div>
+
+    <h2>Professional Experience</h2>
+    
+    <div class="experience-card">
+        <div class="job-header">
+            <span class="job-title">Noor Fanos Trading Company</span>
+            <span class="job-date">FEB 2024 – PRESENT</span>
+        </div>
+        <div class="job-loc">IT Support Engineer - Buraidha, Al-qassim, KSA</div>
+        <ul>
+            <li>Managed Windows Active Directory, Domain Controllers, and GPOs for enhanced security.</li>
+            <li>Configured and optimized firewall settings to safeguard company data.</li>
+            <li>Maintained 100% hardware readiness and software compliance.</li>
+            <li>Resolved complex technical issues through remote screen-sharing.</li>
+        </ul>
+    </div>
+
+    <div class="experience-card">
+        <div class="job-header">
+            <span class="job-title">Astar Mobiles Pvt Ltd</span>
+            <span class="job-date">AUG 2020 – SEP 2023</span>
+        </div>
+        <div class="job-loc">IT Support Engineer - Chennai, India</div>
+        <ul>
+            <li>Resolved cross-platform hardware/software issues for high-priority requests.</li>
+            <li>Conducted root cause analysis (RCA) via remote diagnostics.</li>
+            <li>Collaborated with senior managers for strategic solutions to critical issues.</li>
+        </ul>
+    </div>
+
+    <div class="experience-card">
+        <div class="job-header">
+            <span class="job-title">Skypro Technologies Pvt Ltd</span>
+            <span class="job-date">DEC 2018 – MAR 2020</span>
+        </div>
+        <div class="job-loc">IT Support Engineer - Bangalore, India</div>
+        <ul>
+            <li>Managed high-volume service tickets ensuring SLA compliance.</li>
+            <li>Deployed and monitored enterprise-grade antivirus software.</li>
+            <li>Standardized desktop configurations across the organization.</li>
+        </ul>
+    </div>
+
+    <h2>Education</h2>
+    <div class="edu-item">
+        <b>BE in Electronics and Communication Engineering</b> <br>
+        MET Engineering College | 2015-2018 
+    </div>
+    <div class="edu-item">
+        <b>Diploma in Computer Science and Engineering</b> <br>
+        Noorul Islam Polytechnic College | 2013-2015 
+    </div>
+
+    <h2>Languages</h2>
+    <p>English, Tamil </p>
+
+<div class="contact-grid">
+        <div class="contact-item">📧<a href="mailto:ahamedabdulnazeer96@gmail.com" style="text-decoration:none; color:inherit;">ahamedabdulnazeer96@gmail.com</a></div><br>
+       <br> <div class="contact-item"><b>🇸🇦</b> +966-552152442</div><br>
+        <br><div class="contact-item"><b>🇮🇳</b> +91-6381139226</div><br>
+        <br><div class="contact-item"><b>📍</b> Buraidha, Al-Qassim, KSA</div>
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2024 Ahamed Abdul Nazeer | Built for Professional Excellence
+</footer>
+
+</body>
+</html>
