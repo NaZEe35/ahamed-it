@@ -204,22 +204,29 @@
 		{
 			
             background: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.3) !important;
+
+            border: 1px solid var(--glass-border);
+
             padding: 30px;
+
             border-radius: 24px;
+
             margin-bottom: 25px;
+
             box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+            transition: 0.3s;
 			
         }
 
 
         glass-card:hover 
 		{
-            transform: scale(1.02) translateY(-10px) !important;
-            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.1) !important;
+            transform: translateY(-5px);
+
+            box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+
             border-color: var(--accent);
-			background: rgba(255, 255, 255, 1) !important;
         }
 		h1 
 		{
