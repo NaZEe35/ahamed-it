@@ -346,12 +346,22 @@
         }
 
         .social-links a:hover { background: var(--accent); color: white;backdrop-filter: blur(15px); }
+		#circuitCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Mesh-kku pinnadi irukkum */
+    opacity: 0.6; /* Lines romba bright-ah illama irukka */
+    pointer-events: none;
+}
    </style>
 </head>
-<body>
-
-<div class="glow-overlay" id="glow"></div>
+	<canvas id="circuitCanvas"></canvas>
 <div class="animated-mesh"></div>
+	<div class="glow-overlay" id="glow"></div>
+<body>
 
 <nav>
     <a onclick="showSection('about')" class="active" id="link-about"><i class="fa-solid fa-user"></i></a>
@@ -642,6 +652,92 @@ document.querySelectorAll('.glass-card').forEach(card => {
     observer.observe(card);
 });
     }
+	const canvas = document.getElementById('circuitCanvas');
+const ctx = canvas.getContext('2d');
+
+let particles = [];
+const particleCount = 30; // Ethana lines venumo athu
+
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+window.addEventListener('resize', resize);
+resize();
+
+class CircuitParticle {
+    constructor() {
+        this.reset();
+    }
+
+    reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.speed = 1 + Math.random() * 2;
+        // PCB lines eppovum 90 degree or 45 degree-la thaan irukkum
+        this.direction = Math.random() > 0.5 ? 'horizontal' : 'vertical';
+        this.history = [];
+        this.maxHistory = 15 + Math.random() * 20;
+    }
+
+    update() {
+        this.history.push({ x: this.x, y: this.y });
+        if (this.history.length > this.maxHistory) this.history.shift();
+
+        if (this.direction === 'horizontal') {
+            this.x += this.speed;
+        } else {
+            this.y += this.speed;
+        }
+
+        // Screen-ah vittu poita reset panna
+        if (this.x > canvas.width || this.y > canvas.height) {
+            this.reset();
+        }
+
+        // Random-ah direction change panni circuit look kondu vara
+        if (Math.random() < 0.02) {
+            this.direction = this.direction === 'horizontal' ? 'vertical' : 'horizontal';
+        }
+    }
+
+    draw() {
+        ctx.beginPath();
+        ctx.strokeStyle = '#4f46e5'; // Unga accent color
+        ctx.lineWidth = 1;
+        ctx.lineJoin = 'round';
+        
+        if (this.history.length > 0) {
+            ctx.moveTo(this.history[0].x, this.history[0].y);
+            for (let point of this.history) {
+                ctx.lineTo(point.x, point.y);
+            }
+        }
+        ctx.stroke();
+
+        // Line-oda head-la chinna circle (Solder point mathiri)
+        ctx.fillStyle = '#4f46e5';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+        ctx.fill();
+    }
+}
+
+for (let i = 0; i < particleCount; i++) {
+    particles.push(new CircuitParticle());
+}
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+        p.update();
+        p.draw();
+    });
+    requestAnimationFrame(animate);
+}
+
+animate();
 </script>
 
 </body>
